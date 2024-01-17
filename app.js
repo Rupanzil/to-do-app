@@ -2,12 +2,13 @@ const taskField = document.querySelector("input");
 
 // Function to save tasks to local storage
 function saveTasks() {
-    const tasks = [];
+    const tasks = [];           // This is making the tasks[] empty every time savetasks() is fired
     document.querySelectorAll("li").forEach(li => tasks.push({
         text: li.textContent,
-        completed: li.className === "completed"
+        completed: li.className === "completed"    // This stores boolean, whether the task is completed or not
     }));
     localStorage.setItem('tasks', JSON.stringify(tasks));
+    // console.log("This will be saved now: ", tasks);
 }
 
 // Function to load tasks from local storage
@@ -36,11 +37,7 @@ document.querySelector("button").addEventListener("click", () => {
 
 document.querySelector("ul").addEventListener("click", (event) => {
     if (event.target.tagName === "LI") {
-        if (event.target.className === "completed") {
-            event.target.className = "";
-        } else {
-            event.target.className = "completed";
-        }
+        event.target.classList.toggle("completed");
         saveTasks();  // Save tasks after marking as completed
     }
 });
