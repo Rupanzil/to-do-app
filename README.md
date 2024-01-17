@@ -18,6 +18,7 @@ A simple, but functional to-do app.
 
 
 ## Planned upgrades for the future
+* ~~add comments to the app.js file to increase readabilty~~
 * Making the to-do items draggable, so that the list can be rearranged.
 * adding a footer where there will be links to my socials.
 * adding a dragging handle.
